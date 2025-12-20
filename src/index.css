@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Forest Theme Colors */
+    --background: 156 60% 7%;
+    --foreground: 45 30% 92%;
+
+    --card: 156 55% 10%;
+    --card-foreground: 45 30% 92%;
+
+    --popover: 156 55% 10%;
+    --popover-foreground: 45 30% 92%;
+
+    --primary: 160 65% 55%;
+    --primary-foreground: 156 60% 7%;
+
+    --secondary: 156 40% 18%;
+    --secondary-foreground: 45 30% 92%;
+
+    --muted: 156 30% 15%;
+    --muted-foreground: 156 15% 55%;
+
+    --accent: 42 60% 55%;
+    --accent-foreground: 156 60% 7%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 156 30% 20%;
+    --input: 156 30% 20%;
+    --ring: 160 65% 55%;
+
+    --radius: 0.5rem;
+
+    /* Custom Forest Palette */
+    --jungle-deep: 160 55% 11%;
+    --jungle-moss: 152 51% 24%;
+    --jungle-emerald: 160 75% 52%;
+    --jungle-gold: 42 55% 55%;
+    --jungle-charcoal: 160 25% 5%;
+    --jungle-fog: 156 20% 80%;
+
+    /* Gradients */
+    --gradient-forest: linear-gradient(180deg, hsl(160 55% 11%), hsl(160 25% 5%));
+    --gradient-emerald: linear-gradient(135deg, hsl(160 75% 52% / 0.2), hsl(42 55% 55% / 0.1));
+    --gradient-gold: linear-gradient(135deg, hsl(42 55% 55%), hsl(42 70% 45%));
+    --gradient-fog: linear-gradient(180deg, hsl(156 20% 80% / 0.05), transparent);
+
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(160 75% 52% / 0.2);
+    --shadow-gold: 0 0 30px hsl(42 55% 55% / 0.3);
+    --shadow-deep: 0 25px 50px -12px hsl(160 25% 5% / 0.8);
+
+    /* Sidebar defaults */
+    --sidebar-background: 156 55% 10%;
+    --sidebar-foreground: 45 30% 92%;
+    --sidebar-primary: 160 65% 55%;
+    --sidebar-primary-foreground: 156 60% 7%;
+    --sidebar-accent: 156 40% 18%;
+    --sidebar-accent-foreground: 45 30% 92%;
+    --sidebar-border: 156 30% 20%;
+    --sidebar-ring: 160 65% 55%;
+  }
+
+  .dark {
+    --background: 156 60% 7%;
+    --foreground: 45 30% 92%;
+    --card: 156 55% 10%;
+    --card-foreground: 45 30% 92%;
+    --popover: 156 55% 10%;
+    --popover-foreground: 45 30% 92%;
+    --primary: 160 65% 55%;
+    --primary-foreground: 156 60% 7%;
+    --secondary: 156 40% 18%;
+    --secondary-foreground: 45 30% 92%;
+    --muted: 156 30% 15%;
+    --muted-foreground: 156 15% 55%;
+    --accent: 42 60% 55%;
+    --accent-foreground: 156 60% 7%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 156 30% 20%;
+    --input: 156 30% 20%;
+    --ring: 160 65% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif;
+    @apply font-bold tracking-wide;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Cinzel', serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-accent {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  /* Mythic Button Styles */
+  .btn-mythic {
+    @apply relative px-8 py-4 font-display text-sm uppercase tracking-[0.2em] overflow-hidden;
+    @apply bg-gradient-to-r from-jungle-emerald to-jungle-emerald/80;
+    @apply text-jungle-charcoal font-bold;
+    @apply border border-jungle-emerald/50;
+    @apply transition-all duration-500 ease-out;
+    @apply hover:shadow-[0_0_40px_hsl(160_75%_52%/0.4)];
+    @apply hover:scale-105;
+  }
+
+  .btn-mythic::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-foreground/10 to-transparent;
+    @apply -translate-x-full transition-transform duration-700;
+  }
+
+  .btn-mythic:hover::before {
+    @apply translate-x-full;
+  }
+
+  .btn-outline-mythic {
+    @apply relative px-8 py-4 font-display text-sm uppercase tracking-[0.2em];
+    @apply bg-transparent text-jungle-emerald;
+    @apply border border-jungle-emerald/40;
+    @apply transition-all duration-500 ease-out;
+    @apply hover:bg-jungle-emerald/10 hover:border-jungle-emerald;
+  }
+
+  /* Stone Card Styles */
+  .card-stone {
+    @apply relative p-6 rounded-lg overflow-hidden;
+    @apply bg-gradient-to-br from-secondary/80 to-muted/50;
+    @apply border border-border/50;
+    @apply backdrop-blur-sm;
+    @apply transition-all duration-500 ease-out;
+    @apply hover:border-jungle-emerald/30;
+    @apply hover:shadow-[0_20px_40px_-15px_hsl(160_75%_52%/0.15)];
+    @apply hover:-translate-y-1;
+  }
+
+  .card-stone::before {
+    content: '';
+    @apply absolute inset-0 opacity-10;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  /* Glow Effects */
+  .glow-emerald {
+    @apply shadow-[0_0_40px_hsl(160_75%_52%/0.3)];
+  }
+
+  .glow-gold {
+    @apply shadow-[0_0_30px_hsl(42_55%_55%/0.3)];
+  }
+
+  /* Text Gradients */
+  .text-gradient-emerald {
+    @apply bg-gradient-to-r from-jungle-emerald via-jungle-fog to-jungle-emerald bg-clip-text text-transparent;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-jungle-gold via-jungle-fog/80 to-jungle-gold bg-clip-text text-transparent;
+  }
+
+  /* Fog Overlay */
+  .fog-overlay {
+    @apply pointer-events-none;
+    background: radial-gradient(ellipse at center, transparent 0%, hsl(var(--background)) 70%);
+  }
+
+  /* Film Grain */
+  .film-grain::after {
+    content: '';
+    @apply absolute inset-0 pointer-events-none opacity-[0.03];
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  /* Section dividers */
+  .divider-forest {
+    @apply h-px w-full;
+    background: linear-gradient(90deg, transparent, hsl(var(--jungle-emerald) / 0.3), transparent);
+  }
+
+  /* Underline animation */
+  .link-underline {
+    @apply relative;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-[2px] scale-x-0 origin-right;
+    @apply bg-gradient-to-r from-jungle-emerald to-jungle-gold;
+    @apply transition-transform duration-300 ease-out;
+  }
+
+  .link-underline:hover::after {
+    @apply scale-x-100 origin-left;
+  }
+}
+
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+}
