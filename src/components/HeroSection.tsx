@@ -60,15 +60,15 @@ const HeroSection = () => {
       <span className="text-foreground">Kand</span>
     </h1>
 
-    <p className="font-accent text-base sm:text-lg md:text-xl italic mb-2 sm:mb-3 text-foreground">
+    {/* <p className="font-accent text-base sm:text-lg md:text-xl italic mb-2 sm:mb-3 text-foreground">
       Innovating Games for a Changing World of Players
-    </p>
+    </p> */}
 
-    <p className="font-body text-xs sm:text-sm md:text-base text-foreground/90 mb-6 sm:mb-8 max-w-xl">
+    {/* <p className="font-body text-xs sm:text-sm md:text-base text-foreground/90 mb-6 sm:mb-8 max-w-xl">
       We're not retelling history. We're making it as a new experience.
 
 Every myth ends in a war. Ours ends in understanding.
-    </p>
+    </p> */}
 
     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
       <Button variant="mythic" size="xl">
