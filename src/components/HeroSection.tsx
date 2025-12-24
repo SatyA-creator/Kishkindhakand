@@ -7,7 +7,7 @@ const HeroSection = () => {
       {/* MAIN BACKGROUND (CLEARER NOW) */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/bg-1.PNG"
+          src="/finalbg.png"
           alt="Vali and Sugriva - Kishkindha Kingdom"
           className="w-full h-full object-cover object-center"
           loading="eager"
@@ -19,7 +19,7 @@ const HeroSection = () => {
 
       {/* CONTENT */}
       <div className="relative z-20 container mx-auto px-4 min-h-screen flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 w-full items-center max-w-6xl mx-auto">
 
           {/* LEFT SIDE — BIG IMAGE WITH TEXT OVER IT */}
          <motion.div
@@ -33,12 +33,12 @@ const HeroSection = () => {
     className="
       relative
       w-full
-      max-w-[900px]
-      min-h-[480px]
-      md:min-h-[520px]
-      lg:min-h-[560px]
-      px-14
-      py-14
+      max-w-[700px]
+      min-h-[380px]
+      md:min-h-[420px]
+      lg:min-h-[460px]
+      px-8
+      py-10
       flex
       flex-col
       justify-center
@@ -51,33 +51,59 @@ const HeroSection = () => {
     // }}
   >
     {/* TEXT */}
-    <p className="font-display text-jungle-gold text-[0.65rem] sm:text-xs md:text-sm uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4">
+    {/* <p className="font-display text-jungle-gold text-[0.65rem] sm:text-xs md:text-sm uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4">
       Zenith Studio LLC Presents
     </p>
 
     <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight">
       <span className="text-gradient-emerald">Kishkindha</span>{" "}
       <span className="text-foreground">Kand</span>
-    </h1>
+    </h1> */}
 
     {/* <p className="font-accent text-base sm:text-lg md:text-xl italic mb-2 sm:mb-3 text-foreground">
       Innovating Games for a Changing World of Players
     </p> */}
 
-    {/* <p className="font-body text-xs sm:text-sm md:text-base text-foreground/90 mb-6 sm:mb-8 max-w-xl">
-      We're not retelling history. We're making it as a new experience.
+    
 
-Every myth ends in a war. Ours ends in understanding.
-    </p> */}
+    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-48 sm:mt-64 lg:mt-80">
 
-    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-      <Button variant="mythic" size="xl">
-        Enter the Kingdom
-      </Button>
-      <Button variant="mythicOutline" size="xl">
-        Watch Trailer
-      </Button>
-    </div>
+
+  <button
+    className="
+      relative overflow-hidden
+      px-6 py-3 sm:px-8 sm:py-4
+      text-sm sm:text-base lg:text-lg
+      font-display font-bold tracking-wider
+      rounded-xl
+      text-amber-100
+      bg-[linear-gradient(135deg,#3b1f0e,#5a2e16,#3b1f0e)]
+      shadow-[inset_0_2px_4px_rgba(255,255,255,0.15),0_10px_25px_rgba(0,0,0,0.4)]
+      border border-amber-700/40
+      transition-all duration-300
+      hover:scale-105 hover:shadow-[0_15px_40px_rgba(0,0,0,0.6)]
+      active:scale-95
+    "
+  >
+    {/* Wood grain overlay */}
+    <span
+      className="absolute inset-0 opacity-30 pointer-events-none"
+      style={{
+        backgroundImage:
+          "repeating-linear-gradient(45deg, rgba(255,255,255,0.08) 0px, rgba(255,255,255,0.08) 2px, transparent 2px, transparent 6px)",
+      }}
+    />
+
+    {/* Glow on hover */}
+    <span className="absolute inset-0 bg-gradient-to-r from-amber-500/10 via-amber-300/20 to-amber-500/10 opacity-0 hover:opacity-100 transition-opacity duration-300" />
+
+    {/* Button text */}
+    <span className="relative z-10">
+      Wishlist on Steam
+    </span>
+  </button>
+</div>
+
   </div>
 </motion.div>
 

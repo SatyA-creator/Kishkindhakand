@@ -34,7 +34,8 @@ const Index = () => {
       <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
         <Navbar />
         
-        <main>
+        {/* Main content with left padding for desktop sidebar */}
+        <main className="md:pl-20 transition-all duration-300">
           <HeroSection />
           <Suspense fallback={<SectionLoader />}>
             <AboutSection />

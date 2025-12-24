@@ -49,13 +49,13 @@ const FeaturesSection = memo(() => {
   ];
 
   return (
-    <section id="features" className="relative py-16 sm:py-20 md:py-24 overflow-hidden">
+    <section id="features" className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
       {/* ================= BACKGROUND ================= */}
 
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/bg-5.PNG')" }}
+        style={{ backgroundImage: "url('/border-1.PNG')" }}
         aria-hidden="true"
       />
 
@@ -76,23 +76,23 @@ const FeaturesSection = memo(() => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12"
         >
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-4 sm:mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4">
             Gameplay <span className="text-jungle-emerald">Loop</span>
           </h2>
-          <p className="font-display text-xl sm:text-2xl md:text-3xl text-jungle-gold mb-6 sm:mb-8">
+          <p className="font-display text-lg sm:text-xl md:text-2xl text-jungle-gold mb-4 sm:mb-6">
             Fight. Feel. Reflect.
           </p>
-          <div className="divider-forest mx-auto mb-8" />
-          <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto">
+          <div className="divider-forest mx-auto mb-6" />
+          <p className="font-body text-base text-muted-foreground max-w-2xl mx-auto">
             Isometric narrative-action adventure where players alternate between
             Vali and Sugriva across 20 handcrafted levels.
           </p>
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 max-w-5xl mx-auto">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -101,17 +101,17 @@ const FeaturesSection = memo(() => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 * index }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="group relative bg-secondary/30 backdrop-blur-sm border border-jungle-emerald/20 rounded-lg p-6 sm:p-8 hover:border-jungle-emerald/50 transition-all duration-300"
+              className="group relative bg-secondary/30 backdrop-blur-sm border border-jungle-emerald/20 rounded-lg p-4 sm:p-6 hover:border-jungle-emerald/50 transition-all duration-300"
             >
               {/* Icon */}
               <div
-                className={`${feature.color} mb-6 transform group-hover:scale-110 transition-transform duration-300`}
+                className={`${feature.color} mb-4 transform group-hover:scale-110 transition-transform duration-300`}
               >
                 {feature.icon}
               </div>
 
               {/* Content */}
-              <h3 className="font-display text-xl font-bold text-foreground mb-4">
+              <h3 className="font-display text-lg font-bold text-foreground mb-3">
                 {feature.title}
               </h3>
               <p className="font-body text-muted-foreground text-sm leading-relaxed">
@@ -130,13 +130,13 @@ const FeaturesSection = memo(() => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-20 bg-jungle-charcoal/80 backdrop-blur-sm border border-jungle-emerald/30 rounded-lg p-8 md:p-12 max-w-5xl mx-auto"
+          className="mt-12 bg-jungle-charcoal/80 backdrop-blur-sm border border-jungle-emerald/30 rounded-lg p-5 sm:p-6 md:p-8 max-w-4xl mx-auto"
         >
-          <h3 className="font-display text-3xl md:text-4xl font-bold text-center text-foreground mb-8">
+          <h3 className="font-display text-2xl md:text-3xl font-bold text-center text-foreground mb-6">
             Target <span className="text-jungle-emerald">Audience</span>
           </h3>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {[
               { label: "Platform", value: "PC (Unity Engine)" },
               { label: "Age", value: "12+" },
@@ -151,10 +151,10 @@ const FeaturesSection = memo(() => {
                 transition={{ duration: 0.5, delay: 0.1 * index }}
                 className="text-center"
               >
-                <p className="font-display text-jungle-gold text-sm uppercase tracking-wider mb-2">
+                <p className="font-display text-jungle-gold text-xs uppercase tracking-wider mb-2">
                   {item.label}
                 </p>
-                <p className="font-body text-foreground text-lg">
+                <p className="font-body text-foreground text-base">
                   {item.value}
                 </p>
               </motion.div>

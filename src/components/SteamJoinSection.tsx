@@ -5,13 +5,13 @@ import { memo } from "react";
 
 const SteamJoinSection = memo(() => {
   return (
-    <section id="steam" className="relative py-16 sm:py-20 md:py-24 overflow-hidden">
+    <section id="steam" className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
       {/* ================= BACKGROUND ================= */}
 
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/bg-6.PNG')" }}
+        style={{ backgroundImage: "url('/border002.PNG')" }}
         aria-hidden="true"
       />
 
@@ -32,13 +32,13 @@ const SteamJoinSection = memo(() => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12"
         >
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-4 sm:mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4">
             Join the <span className="text-jungle-emerald">Journey</span>
           </h2>
-          <div className="divider-forest mx-auto mb-6 sm:mb-8" />
-          <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="divider-forest mx-auto mb-4 sm:mb-6" />
+          <p className="font-body text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
             Be part of bringing ancient Indian mythology to modern gaming.
             Wishlist Kishkindha Kand on Steam and get notified on launch.
           </p>
@@ -50,18 +50,18 @@ const SteamJoinSection = memo(() => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto bg-black/40 backdrop-blur-md border border-jungle-emerald/30 rounded-lg p-6 sm:p-8 md:p-12 mb-10 sm:mb-12"
+          className="max-w-3xl mx-auto bg-black/40 backdrop-blur-md border border-jungle-emerald/30 rounded-lg p-5 sm:p-6 md:p-8 mb-8 sm:mb-10"
         >
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-jungle-emerald/20 border border-jungle-emerald/50 mb-4 sm:mb-6">
-              <ExternalLink className="w-8 h-8 sm:w-10 sm:h-10 text-jungle-emerald" />
+            <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-jungle-emerald/20 border border-jungle-emerald/50 mb-4">
+              <ExternalLink className="w-7 h-7 sm:w-8 sm:h-8 text-jungle-emerald" />
             </div>
 
-            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 sm:mb-6">
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3 sm:mb-4">
               Wishlist on Steam
             </h3>
 
-            <p className="font-body text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="font-body text-base text-muted-foreground mb-6 max-w-xl mx-auto">
               Support independent game development and be among the first to
               experience the epic tale of Kishkindha Kand.
             </p>
@@ -143,33 +143,7 @@ const SteamJoinSection = memo(() => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="max-w-4xl mx-auto mt-20"
         >
-          <div className="bg-black/40 backdrop-blur-md border border-jungle-emerald/30 rounded-lg p-8 md:p-12">
-            <h3 className="font-display text-3xl md:text-4xl font-bold text-center text-foreground mb-6">
-              Join Our Community
-            </h3>
-            <p className="font-body text-lg text-center text-muted-foreground mb-8">
-              Let's create something amazing together
-            </p>
-
-            {/* Newsletter */}
-            <div className="bg-black/35 backdrop-blur-md border border-jungle-emerald/20 rounded-lg p-6">
-              <h4 className="font-display text-xl font-bold text-foreground mb-4 text-center">
-                Stay Updated
-              </h4>
-              <p className="font-body text-sm text-muted-foreground text-center mb-4">
-                Get exclusive development updates, behind-the-scenes content, and
-                early access opportunities
-              </p>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-2 bg-background border border-jungle-emerald/30 rounded focus:outline-none focus:border-jungle-emerald/50 text-foreground"
-                />
-                <Button variant="mythic">Subscribe</Button>
-              </div>
-            </div>
-          </div>
+         
         </motion.div>
       </div>
     </section>
