@@ -15,30 +15,36 @@ const SupportSection = memo(() => {
       question: "What is Kishkindha Kand about?",
       answer:
         "Kishkindha Kand is an isometric narrative-action adventure game that tells the epic tale of brothers Vali and Sugriva from the Ramayana. Experience one conflict through two perspectives as you explore themes of brotherhood, betrayal, and redemption in the mythical jungle kingdom of Kishkindha.",
+      bgImage: "/faq-card-1.png",
     },
     {
       question: "What platforms will it be available on?",
       answer:
         "Kishkindha Kand will initially launch on PC via Steam, developed in Unity Engine.",
+      bgImage: "/faq-card-2.png",
     },
     {
       question: "When is the release date?",
       answer:
         "We're targeting a Q1 2027 release. Wishlist on Steam to get notified when we launch!",
+      bgImage: "/faq-card-3.png",
     },
     {
       question: "How can I support the development?",
       answer:
         "You can support us by wishlisting the game on Steam, joining our community, and sharing the game.",
+      bgImage: "/faq-card-4.png",
     },
     {
       question: "Will there be multiplayer?",
       answer:
         "No. Kishkindha Kand is a focused single-player narrative experience.",
+      bgImage: "/faq-card-5.png",
     },
     {
       question: "What are the system requirements?",
       answer: "System requirements will be announced closer to launch.",
+      bgImage: "/faq-card-6.png",
     },
   ];
 
@@ -54,12 +60,15 @@ const SupportSection = memo(() => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/img002.PNG')", // 🔁 change if needed
+          backgroundImage: "url('/img002.PNG')",
+          backgroundAttachment: "scroll",
+          backgroundSize: "cover",
         }}
+        aria-hidden="true"
       />
 
       {/* Dark Overlay for readability */}
-      <div className="absolute inset-0 bg-jungle-charcoal/30" />
+      <div className="absolute inset-0 bg-jungle-charcoal/50 sm:bg-jungle-charcoal/30" />
 
       {/* Accent Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-jungle-emerald/10 via-transparent to-jungle-gold/10" />
@@ -79,7 +88,7 @@ const SupportSection = memo(() => {
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4">
             Support & <span className="text-jungle-emerald">FAQ</span>
           </h2>
-          <div className="divider-forest mx-auto mb-4 sm:mb-6" />
+
           <p className="font-body text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
             Find answers to common questions
           </p>
@@ -100,14 +109,23 @@ const SupportSection = memo(() => {
                 <AccordionItem
                   key={faq.question}
                   value={`left-item-${index}`}
-                  className="bg-secondary/30 backdrop-blur-md border border-jungle-emerald/20 rounded-lg px-4 sm:px-5 hover:border-jungle-emerald/50 transition-all duration-300"
+                  className="relative rounded-lg overflow-hidden border border-jungle-emerald/25 hover:border-jungle-emerald/50 transition-all duration-300"
+                  style={{
+                    backgroundImage: `url('/50061.png')`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
                 >
-                  <AccordionTrigger className="font-display text-base sm:text-lg font-semibold text-foreground hover:text-jungle-emerald">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="font-body text-sm text-muted-foreground leading-relaxed">
-                    {faq.answer}
-                  </AccordionContent>
+                  {/* Card overlay */}
+                  <div className="absolute inset-0  transition-colors duration-300" />
+                  <div className="relative px-4 sm:px-5">
+                    <AccordionTrigger className="font-display text-base sm:text-lg font-semibold text-white hover:text-jungle-emerald">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="font-body text-sm text-white/85 leading-relaxed pb-4">
+                      {faq.answer}
+                    </AccordionContent>
+                  </div>
                 </AccordionItem>
               ))}
             </Accordion>
@@ -118,14 +136,23 @@ const SupportSection = memo(() => {
                 <AccordionItem
                   key={faq.question}
                   value={`right-item-${index}`}
-                  className="bg-secondary/30 backdrop-blur-md border border-jungle-emerald/20 rounded-lg px-4 sm:px-5 hover:border-jungle-emerald/50 transition-all duration-300"
+                  className="relative rounded-lg overflow-hidden border border-jungle-emerald/25 hover:border-jungle-emerald/50 transition-all duration-300"
+                  style={{
+                    backgroundImage: `url('/50061.png')`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
                 >
-                  <AccordionTrigger className="font-display text-base sm:text-lg font-semibold text-foreground hover:text-jungle-emerald">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="font-body text-sm text-muted-foreground leading-relaxed">
-                    {faq.answer}
-                  </AccordionContent>
+                  {/* Card overlay */}
+                  <div className="absolute inset-0  transition-colors duration-300" />
+                  <div className="relative px-4 sm:px-5">
+                    <AccordionTrigger className="font-display text-base sm:text-lg font-semibold text-white hover:text-jungle-emerald">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="font-body text-sm text-white/85 leading-relaxed pb-4">
+                      {faq.answer}
+                    </AccordionContent>
+                  </div>
                 </AccordionItem>
               ))}
             </Accordion>

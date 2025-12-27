@@ -37,21 +37,39 @@ const Index = () => {
         {/* Main content with left padding for desktop sidebar */}
         <main className="md:pl-20 transition-all duration-300">
           <HeroSection />
+          <div className="divider-forest">
+            <img src="/partition.png" alt="Section divider" />
+          </div>
           <Suspense fallback={<SectionLoader />}>
             <AboutSection />
           </Suspense>
+          <div className="divider-forest">
+            <img src="/partition.png" alt="Section divider" />
+          </div>
           <Suspense fallback={<SectionLoader />}>
             <FeaturesSection />
           </Suspense>
+          <div className="divider-forest">
+            <img src="/partition.png" alt="Section divider" />
+          </div>
           <Suspense fallback={<SectionLoader />}>
             <MediaSection />
           </Suspense>
+          <div className="divider-forest">
+            <img src="/partition.png" alt="Section divider" />
+          </div>
           <Suspense fallback={<SectionLoader />}>
             <SteamJoinSection />
           </Suspense>
+          <div className="divider-forest">
+            <img src="/partition.png" alt="Section divider" />
+          </div>
           <Suspense fallback={<SectionLoader />}>
             <DevlogSection />
           </Suspense>
+          <div className="divider-forest">
+            <img src="/partition.png" alt="Section divider" />
+          </div>
           <Suspense fallback={<SectionLoader />}>
             <SupportSection />
           </Suspense>

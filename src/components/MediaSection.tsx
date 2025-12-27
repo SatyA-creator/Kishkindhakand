@@ -72,9 +72,18 @@ const MediaSection = () => {
 
   return (
     <section id="media" className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-jungle-charcoal/30 to-background" />
-      <div className="absolute inset-0 film-grain opacity-30" />
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/exp.PNG')",
+          backgroundAttachment: "scroll",
+          backgroundSize: "cover",
+        }}
+        aria-hidden="true"
+      />
+      {/* Dark overlay for mobile readability */}
+      <div className="absolute inset-0 bg-black/40 sm:bg-black/20" />
 
       <div className="relative container mx-auto px-4">
         {/* Section Header */}
@@ -88,8 +97,7 @@ const MediaSection = () => {
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4">
             Experience <span className="text-jungle-emerald">Kishkindha</span>
           </h2>
-          <div className="divider-forest mx-auto mb-4 sm:mb-6" />
-          <p className="font-body text-base text-muted-foreground">
+          <p className="font-body text-white">
             Images are from engine and alpha build
           </p>
         </motion.div>
@@ -191,7 +199,7 @@ const MediaSection = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-center font-body text-sm text-muted-foreground mt-6"
+            className="text-center font-body text-sm text-white mt-6"
           >
             More gameplay footage and screenshots coming soon as development progresses
           </motion.p>

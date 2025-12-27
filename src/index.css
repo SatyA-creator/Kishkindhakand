@@ -203,8 +203,24 @@
 
   /* Section dividers */
   .divider-forest {
-    @apply h-px w-full;
-    background: linear-gradient(90deg, transparent, hsl(var(--jungle-emerald) / 0.3), transparent);
+    @apply w-full;
+    margin: 0;
+    padding: 0;
+    height: 0;
+    line-height: 0;
+    position: relative;
+    overflow: visible;
+  }
+  
+  .divider-forest img {
+    @apply w-full h-auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-50%);
+    max-width: 100%;
+    z-index: 10;
+    display: block;
   }
 
   /* Underline animation */
